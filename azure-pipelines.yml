@@ -16,7 +16,7 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  DisplayName: 'Use .NET SDK 5.x'
+  displayName: 'Use .NET SDK 5.x'
   inputs:
     packageType: sdk
     version: '5.x'
