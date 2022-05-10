@@ -12,9 +12,7 @@ pool:
   - npm
 
 variables:
-  buildConfiguration: 'Release'
-  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-  dotnetSdkVersion: '5.x'
+  - group: variaveis-teste
 
 steps:
 - task: UseDotNet@2
