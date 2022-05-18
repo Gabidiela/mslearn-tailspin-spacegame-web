@@ -40,6 +40,19 @@ steps:
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
+  
+- bash: 
+- task: DownloadSecureFile@1
+  name: build
+  displayName: "Download build template"
+  inputs:
+    secureFile: 'build.yml'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Agent.TempDirectory)'
+    Contents: 'secureFile'
+    TargetFolder: '$(build.SourcesDirectory)'
 
 - template: templates/build.yml
   parameters:
