@@ -16,4 +16,4 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- script: pwd && ls
+- script: pwd && ls ./templates
