@@ -54,11 +54,11 @@ steps:
     Contents: 'secureFile'
     TargetFolder: '$(build.SourcesDirectory)'
 
-- template: templates/build.yml
+- template: $(build.SourcesDirectory)/build.yml
   parameters:
     buildConfiguration: 'Debug'
 
-- template: templates/build.yml
+- template: $(build.SourcesDirectory)/build.yml
   parameters:
     buildConfiguration: 'Release'
 
