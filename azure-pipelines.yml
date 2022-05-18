@@ -41,10 +41,12 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
+#Pensar em como centralizar este template em cloud / azure
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Debug'
 
+#Pensar em como centralizar este template em cloud / azure
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Release'
