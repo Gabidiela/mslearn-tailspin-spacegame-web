@@ -52,13 +52,13 @@ steps:
   inputs:
     SourceFolder: '$(Agent.TempDirectory)'
     Contents: 'secureFile'
-    TargetFolder: '$(build.SourcesDirectory)'
+    TargetFolder: ' $(Agent.BuildDirectory)'
 
-- template: $(build.SourcesDirectory)/build.yml
+- template:  $(Agent.BuildDirectory)/build.yml
   parameters:
     buildConfiguration: 'Debug'
 
-- template: $(build.SourcesDirectory)/build.yml
+- template:  $(Agent.BuildDirectory)/build.yml
   parameters:
     buildConfiguration: 'Release'
 
