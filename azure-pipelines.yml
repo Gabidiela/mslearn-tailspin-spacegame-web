@@ -42,23 +42,28 @@ steps:
     projects: '**/*.csproj'
   
 - bash: 
-- task: DownloadSecureFile@1
-  name: build
-  displayName: "Download build template"
-  inputs:
-    secureFile: 'build.yml'
+- script: pwd | ls -al
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Agent.TempDirectory)'
-    Contents: 'secureFile'
-    TargetFolder: ' $(Agent.BuildDirectory)'
 
-- template:  $(Agent.BuildDirectory)/build.yml
+
+
+#- task: DownloadSecureFile@1
+#  name: build
+#  displayName: "Download build template"
+#  inputs:
+#    secureFile: 'build.yml'
+
+#- task: CopyFiles@2
+#  inputs:
+#    SourceFolder: '$(Agent.TempDirectory)'
+#    Contents: 'secureFile'
+#    TargetFolder: ' $(Agent.BuildDirectory)'
+
+- template:  /templates/build.yml
   parameters:
     buildConfiguration: 'Debug'
 
-- template:  $(Agent.BuildDirectory)/build.yml
+- template:  /templates/build.yml
   parameters:
     buildConfiguration: 'Release'
 
